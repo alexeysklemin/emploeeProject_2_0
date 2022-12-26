@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comboSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comboSearch.Designer.cs">
+      <DependentUpon>comboSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="emloeesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="comboSearch.resx">
+      <DependentUpon>comboSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

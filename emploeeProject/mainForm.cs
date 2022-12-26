@@ -35,15 +35,19 @@ namespace emploeeProject
             SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
             con.Open();
             SqlCommand com = new SqlCommand("insert into emploeeTable values (@id_emp, @eName, @eSurname, @eSecondName)", con);
+            
+          //  SqlCommand com = new SqlCommand("update emploeeTable set eName=@eName, eSurname=@eSurname, eSecondName=@eSecondName where id_emp=@id_emp", con);
             com.Parameters.AddWithValue("@id_emp", int.Parse(uIdBox.Text));
             com.Parameters.AddWithValue("@eName", uNameBox.Text);
             com.Parameters.AddWithValue("@eSurname", uSurnameBox.Text);
             com.Parameters.AddWithValue("@eSecondName", uSecNamBox.Text);
+            
             com.ExecuteNonQuery();
+            
             con.Close();
 
             MessageBox.Show("Succesfully saved");
-
+            //dataGridView1.Refresh();
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -81,6 +85,23 @@ namespace emploeeProject
             DataTable table = new DataTable();
             datAd.Fill(table);
             dataGridView1.DataSource = table;
+            Hide();
+            comboSearch comboSearch = new comboSearch();
+            comboSearch.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
+            con.Open();
+            SqlCommand com = new SqlCommand("insert into emploeeTable values (@id_emp, @eName, @eSurname, @eSecondName", con);
+            com.Parameters.AddWithValue("@id_emp", int.Parse(uIdBox.Text));
+            com.Parameters.AddWithValue("@eName", uNameBox.Text);
+            com.Parameters.AddWithValue("@eSurname", uSurnameBox.Text);
+            com.Parameters.AddWithValue("@eSecondName", uSecNamBox.Text);
+            com.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Succesfully updates");
         }
     }
 }

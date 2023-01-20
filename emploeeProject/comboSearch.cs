@@ -43,15 +43,23 @@ namespace emploeeProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string qwery "Select * from emploeeTable where eSurnane = '"+ comboBox1.SelectedItem.ToString()+"'";
+            string v = comboBox1.SelectedItem.ToString();
             SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
-            SqlCommand comLine = new SqlCommand("Select * from emploeeTable where eSurname = '" + comboBox1.SelectedItem.ToString() + "'",con);
+            //SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE eSurname = '" + comboBox1.SelectedItem.ToString() + "'",con);
+            SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE eSurname = '" + v + "'", con);
             SqlDataAdapter datAd = new SqlDataAdapter(comLine);
             DataTable table = new DataTable();
             datAd.Fill(table);
 
             dataGridView1.DataSource = table;
             dataGridView1.Refresh();
+        }
+
+        private void addDaatas_Click(object sender, EventArgs e)
+        {
+            Hide();
+            addDatas addDatas = new addDatas();
+            addDatas.ShowDialog();
         }
     }
 }

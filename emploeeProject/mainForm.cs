@@ -77,14 +77,14 @@ namespace emploeeProject
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
+            /*SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
             con.Open();
             SqlCommand comLine = new SqlCommand("Select * from emploeeTable where id_emp=@id_emp", con);
             comLine.Parameters.AddWithValue("id_emp", int.Parse(uIdBox.Text));
             SqlDataAdapter datAd = new SqlDataAdapter(comLine);
             DataTable table = new DataTable();
             datAd.Fill(table);
-            dataGridView1.DataSource = table;
+            dataGridView1.DataSource = table;*/
             Hide();
             comboSearch comboSearch = new comboSearch();
             comboSearch.ShowDialog();

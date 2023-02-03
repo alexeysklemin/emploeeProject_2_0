@@ -43,12 +43,13 @@ namespace emploeeProject
             this.emloeesDataSet2 = new emploeeProject.emloeesDataSet2();
             this.departmentsTableAdapter = new emploeeProject.emloeesDataSet2TableAdapters.departmentsTableAdapter();
             this.resultTable = new System.Windows.Forms.DataGridView();
-            this.emloeesDataSet3 = new emploeeProject.emloeesDataSet3();
-            this.resulttableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.result_tableTableAdapter = new emploeeProject.emloeesDataSet3TableAdapters.result_tableTableAdapter();
             this.idnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddepartamentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idspecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resulttableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emloeesDataSet3 = new emploeeProject.emloeesDataSet3();
+            this.result_tableTableAdapter = new emploeeProject.emloeesDataSet3TableAdapters.result_tableTableAdapter();
+            this.addButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.emploeeTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specializingBindingSource)).BeginInit();
@@ -56,8 +57,8 @@ namespace emploeeProject
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resulttableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -151,20 +152,6 @@ namespace emploeeProject
             this.resultTable.Size = new System.Drawing.Size(704, 245);
             this.resultTable.TabIndex = 3;
             // 
-            // emloeesDataSet3
-            // 
-            this.emloeesDataSet3.DataSetName = "emloeesDataSet3";
-            this.emloeesDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // resulttableBindingSource
-            // 
-            this.resulttableBindingSource.DataMember = "result_table";
-            this.resulttableBindingSource.DataSource = this.emloeesDataSet3;
-            // 
-            // result_tableTableAdapter
-            // 
-            this.result_tableTableAdapter.ClearBeforeFill = true;
-            // 
             // idnameDataGridViewTextBoxColumn
             // 
             this.idnameDataGridViewTextBoxColumn.DataPropertyName = "id_name";
@@ -189,11 +176,37 @@ namespace emploeeProject
             this.idspecDataGridViewTextBoxColumn.Name = "idspecDataGridViewTextBoxColumn";
             this.idspecDataGridViewTextBoxColumn.Width = 125;
             // 
+            // resulttableBindingSource
+            // 
+            this.resulttableBindingSource.DataMember = "result_table";
+            this.resulttableBindingSource.DataSource = this.emloeesDataSet3;
+            // 
+            // emloeesDataSet3
+            // 
+            this.emloeesDataSet3.DataSetName = "emloeesDataSet3";
+            this.emloeesDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // result_tableTableAdapter
+            // 
+            this.result_tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // addButton
+            // 
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addButton.Location = new System.Drawing.Point(292, 117);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(204, 42);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "Add employee";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
             // addDatas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.resultTable);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -208,8 +221,8 @@ namespace emploeeProject
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resulttableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emloeesDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +248,6 @@ namespace emploeeProject
         private System.Windows.Forms.DataGridViewTextBoxColumn idnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddepartamentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idspecDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button addButton;
     }
 }

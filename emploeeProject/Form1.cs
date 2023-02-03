@@ -30,7 +30,7 @@ namespace emploeeProject
             SqlDataReader dr = com.ExecuteReader();
             if (dr.Read())
             {
-                if (usrBox.Text.Equals(dr["account"].ToString()) && pswBox.Text.Equals(dr["passsword"].ToString()))
+                if ((usrBox.Text.Equals(dr["account"].ToString()) && pswBox.Text.Equals(dr["passsword"].ToString())) && (lbcaptcha.Text==txtcaptcha.Text))
                 {
                     Hide();
                     mainForm mainForm = new mainForm();
@@ -47,7 +47,22 @@ namespace emploeeProject
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-
+            Random rnd = new Random();
+            int num = rnd.Next(6, 8);
+            string captcha = "";
+            int totl = 0;
+            do
+            {
+                int chr = rnd.Next(48, 123);
+                if((chr>=48 && chr<=57) || (chr>=65 && chr<=90) || (chr>=97 && chr <= 122)) 
+                {
+                    captcha = captcha + (char)chr;
+                    totl++;
+                    if (totl == num) break;
+                }
+            }
+            while (true);
+            lbcaptcha.Text = captcha;
         }
     }
 }

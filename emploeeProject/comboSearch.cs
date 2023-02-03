@@ -43,14 +43,27 @@ namespace emploeeProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string v = comboBox1.SelectedItem.ToString();
+
             SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
-            //SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE eSurname = '" + comboBox1.SelectedItem.ToString() + "'",con);
-            SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE eSurname = '" + v + "'", con);
+            con.Open();
+            string v = comboBox1.SelectedItem.ToString();
+            Console.WriteLine(v);
+
+            SqlCommand comLine = new SqlCommand("Select * from emploeeTable where eSurname = @eSurname", con);
+            comLine.Parameters.AddWithValue("eSurname", v);
+            /* comLine.Parameters.AddWithValue("eSurname", v));
+             SqlDataAdapter datAd = new SqlDataAdapter(comLine);
+             DataTable table = new DataTable();
+             datAd.Fill(table);
+             dataGridView1.DataSource = table; SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
+             SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE  = '" + comboBox1.SelectedItem.ToString() + "'",con);
+           //  
+             //string v = "Smith";
+           //  SqlCommand comLine = new SqlCommand("Select * from emploeeTable WHERE eSurname = '" + v+"'", con);*/
             SqlDataAdapter datAd = new SqlDataAdapter(comLine);
             DataTable table = new DataTable();
             datAd.Fill(table);
-
+            comLine.ExecuteNonQuery();
             dataGridView1.DataSource = table;
             dataGridView1.Refresh();
         }

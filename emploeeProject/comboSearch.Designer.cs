@@ -60,7 +60,7 @@ namespace emploeeProject
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 30);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "eSurname";
+            this.comboBox1.ValueMember = "id_emp";
             // 
             // emploeeTableBindingSource
             // 

@@ -34,12 +34,15 @@ namespace emploeeProject
             this.pswdLbn = new System.Windows.Forms.Label();
             this.usrBox = new System.Windows.Forms.TextBox();
             this.pswBox = new System.Windows.Forms.TextBox();
+            this.txtcaptcha = new System.Windows.Forms.TextBox();
+            this.lcaptcha = new System.Windows.Forms.Label();
+            this.lbcaptcha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // logBtn
             // 
             this.logBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logBtn.Location = new System.Drawing.Point(284, 316);
+            this.logBtn.Location = new System.Drawing.Point(304, 466);
             this.logBtn.Name = "logBtn";
             this.logBtn.Size = new System.Drawing.Size(243, 56);
             this.logBtn.TabIndex = 0;
@@ -84,17 +87,50 @@ namespace emploeeProject
             this.pswBox.TabIndex = 4;
             this.pswBox.UseSystemPasswordChar = true;
             // 
+            // txtcaptcha
+            // 
+            this.txtcaptcha.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtcaptcha.Location = new System.Drawing.Point(254, 296);
+            this.txtcaptcha.Name = "txtcaptcha";
+            this.txtcaptcha.Size = new System.Drawing.Size(176, 34);
+            this.txtcaptcha.TabIndex = 6;
+            this.txtcaptcha.UseSystemPasswordChar = true;
+            // 
+            // lcaptcha
+            // 
+            this.lcaptcha.AutoSize = true;
+            this.lcaptcha.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcaptcha.Location = new System.Drawing.Point(111, 296);
+            this.lcaptcha.Name = "lcaptcha";
+            this.lcaptcha.Size = new System.Drawing.Size(120, 29);
+            this.lcaptcha.TabIndex = 5;
+            this.lcaptcha.Text = "Password";
+            // 
+            // lbcaptcha
+            // 
+            this.lbcaptcha.AutoSize = true;
+            this.lbcaptcha.Font = new System.Drawing.Font("OCR A Extended", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcaptcha.Location = new System.Drawing.Point(267, 233);
+            this.lbcaptcha.Name = "lbcaptcha";
+            this.lbcaptcha.Size = new System.Drawing.Size(117, 25);
+            this.lbcaptcha.TabIndex = 7;
+            this.lbcaptcha.Text = "captcha";
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.lbcaptcha);
+            this.Controls.Add(this.txtcaptcha);
+            this.Controls.Add(this.lcaptcha);
             this.Controls.Add(this.pswBox);
             this.Controls.Add(this.usrBox);
             this.Controls.Add(this.pswdLbn);
             this.Controls.Add(this.userlbn);
             this.Controls.Add(this.logBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "loginForm";
             this.Text = "LogIn Form";
             this.Load += new System.EventHandler(this.loginForm_Load);
@@ -110,6 +146,9 @@ namespace emploeeProject
         private System.Windows.Forms.Label pswdLbn;
         private System.Windows.Forms.TextBox usrBox;
         private System.Windows.Forms.TextBox pswBox;
+        private System.Windows.Forms.TextBox txtcaptcha;
+        private System.Windows.Forms.Label lcaptcha;
+        private System.Windows.Forms.Label lbcaptcha;
     }
 }
 

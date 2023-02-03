@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace emploeeProject
 {
@@ -32,6 +33,21 @@ namespace emploeeProject
             this.specializingTableAdapter.Fill(this.emloeesDataSet1.specializing);
             // TODO: This line of code loads data into the 'emloeesDataSet.emploeeTable' table. You can move, or remove it, as needed.
             this.emploeeTableTableAdapter.Fill(this.emloeesDataSet.emploeeTable);
+
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-ALEX\SQLEXPRESS; Initial Catalog = emloees; Integrated Security = True");
+            con.Open();
+
+          /*  SqlCommand addCom = new SqlCommand
+
+                addCom.Parameters.AddWithValue("@id_emp", int.Parse(uIdBox.Text));
+
+            SqlDataAdapter datAd = new SqlDataAdapter(addCom);
+            DataTable table = new DataTable();
+            datAd.Fill(table);*/
 
         }
     }
